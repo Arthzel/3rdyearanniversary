@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>3 Years — Our Story</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Dancing+Script:wght@400;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── PRELOADER ── -->
+  <div id="preloader">
+    <div class="pre-ring"></div>
+    <div class="pre-heart">♥</div>
+    <p class="pre-text">Loading our story…</p>
+    <div class="pre-progress"><div class="pre-bar"></div></div>
+  </div>
+
+  <!-- ── SCROLL PROGRESS ── -->
+  <div id="scroll-progress"><div id="scroll-bar"></div></div>
+
+  <!-- ── CURSOR ── -->
+  <div id="cursor"><div class="cursor-dot"></div></div>
+  <div id="cursor-trail"></div>
+
+  <!-- ── FLOATING PARTICLES CANVAS ── -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- ── MUSIC BUTTON ── -->
+  <div id="music-btn" class="music-btn" title="Toggle music">
+    <div class="music-glow"></div>
+    <svg class="music-icon play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+    <svg class="music-icon pause-icon hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+    <div class="music-waves">
+      <span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       HERO
+  ══════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-bg-layer"></div>
+    <div class="hero-noise"></div>
+    <div class="hero-aurora"></div>
+
+    <!-- Floating paint splats -->
+    <div class="splat splat-red s1"></div>
+    <div class="splat splat-blue s2"></div>
+    <div class="splat splat-red s3"></div>
+    <div class="splat splat-blue s4"></div>
+
+    <!-- Light rays -->
+    <div class="light-rays">
+      <div class="ray r1"></div>
+      <div class="ray r2"></div>
+      <div class="ray r3"></div>
+    </div>
+
+    <!-- Handprint silhouettes -->
+    <div class="hand hand-left">
+      <svg viewBox="0 0 220 280" xmlns="http://www.w3.org/2000/svg">
+        <path d="M60 260 C30 240 10 200 10 160 L10 80 C10 60 22 48 38 48 C44 48 50 51 54 56 L54 30 C54 14 64 4 78 4 C92 4 102 14 102 30 L102 20 C102 6 112 -2 124 -2 C136 -2 146 6 146 20 L146 30 C146 16 156 6 168 6 C180 6 190 16 190 30 L190 120 C200 112 212 114 216 124 C222 138 210 160 190 180 L190 240 C190 252 180 262 168 262 Z" fill="rgba(220,40,40,0.85)"/>
+      </svg>
+    </div>
+    <div class="hand hand-right">
+      <svg viewBox="0 0 220 280" xmlns="http://www.w3.org/2000/svg">
+        <path d="M160 260 C190 240 210 200 210 160 L210 80 C210 60 198 48 182 48 C176 48 170 51 166 56 L166 30 C166 14 156 4 142 4 C128 4 118 14 118 30 L118 20 C118 6 108 -2 96 -2 C84 -2 74 6 74 20 L74 30 C74 16 64 6 52 6 C40 6 30 16 30 30 L30 120 C20 112 8 114 4 124 C-2 138 10 160 30 180 L30 240 C30 252 40 262 52 262 Z" fill="rgba(30,60,200,0.85)"/>
+      </svg>
+    </div>
+
+    <div class="hero-content">
+      <p class="hero-label reveal-up">06 · 04 · 2023 — 06 · 04 · 2026</p>
+      <h1 class="hero-title reveal-up">
+        <span class="line1">Three</span>
+        <span class="line2">Beautiful</span>
+        <span class="line3">Years</span>
+      </h1>
+      <p class="hero-quote reveal-up">"When I'm with you, everything feels <em>right</em>."</p>
+      <div class="hero-cta reveal-up">
+        <span class="scroll-hint">Scroll to relive our journey ↓</span>
+      </div>
+    </div>
+
+    <!-- Live Anniversary Counter -->
+    <div class="live-counter reveal-up" id="live-counter">
+      <div class="lc-label">Together for</div>
+      <div class="lc-nums">
+        <div class="lc-unit"><span id="lc-years">0</span><span class="lc-tag">yrs</span></div>
+        <div class="lc-sep">:</div>
+        <div class="lc-unit"><span id="lc-months">0</span><span class="lc-tag">mo</span></div>
+        <div class="lc-sep">:</div>
+        <div class="lc-unit"><span id="lc-days">0</span><span class="lc-tag">d</span></div>
+        <div class="lc-sep">:</div>
+        <div class="lc-unit"><span id="lc-hours">00</span><span class="lc-tag">h</span></div>
+        <div class="lc-sep">:</div>
+        <div class="lc-unit"><span id="lc-mins">00</span><span class="lc-tag">m</span></div>
+        <div class="lc-sep">:</div>
+        <div class="lc-unit"><span id="lc-secs">00</span><span class="lc-tag">s</span></div>
+      </div>
+    </div>
+
+    <div class="hero-date-stamp">06-04-26</div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       CHAPTER DIVIDER 0 — Intro
+  ══════════════════════════════════ -->
+  <section class="chapter-intro">
+    <div class="noise-overlay"></div>
+    <div class="chapter-inner">
+      <div class="big-number reveal-side-left">3</div>
+      <div class="chapter-text reveal-side-right">
+        <h2>Three years.<br/>Thousands of moments.</h2>
+        <p>Every laugh. Every tear. Every quiet night and every adventure. This is our story — told in colour, memory, and love.</p>
+      </div>
+    </div>
+    <div class="paint-line red"></div>
+    <div class="paint-line blue"></div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       YEAR ONE
+  ══════════════════════════════════ -->
+  <section class="year-section year-one" id="year1">
+    <div class="year-bg-text">2023</div>
+    <div class="year-header reveal-up">
+      <span class="year-tag">Year One</span>
+      <h2 class="year-title">The Beginning of <em>Us</em></h2>
+      <p class="year-subtitle">Where it all started — nervous smiles, first butterflies, and the realisation that something extraordinary was happening.</p>
+    </div>
+
+    <div class="memory-grid">
+      <div class="memory-card card-tall reveal-zoom" style="--delay:0s">
+        <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=600&q=80" alt="couple walking" />
+        <div class="card-overlay">
+          <span class="card-label">First Walks</span>
+        </div>
+      </div>
+      <div class="memory-card card-wide reveal-zoom" style="--delay:0.15s">
+        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=700&q=80" alt="couple laughing" />
+        <div class="card-overlay">
+          <span class="card-label">Endless Laughter</span>
+        </div>
+      </div>
+      <div class="memory-card card-square reveal-zoom" style="--delay:0.3s">
+        <img src="https://images.unsplash.com/photo-1480562085804-9b149c25ef47?w=500&q=80" alt="coffee date" />
+        <div class="card-overlay">
+          <span class="card-label">Little Dates</span>
+        </div>
+      </div>
+      <div class="memory-card card-square reveal-zoom" style="--delay:0.45s">
+        <img src="https://images.unsplash.com/photo-1543269664-56d93c1b41a6?w=500&q=80" alt="sunset together" />
+        <div class="card-overlay">
+          <span class="card-label">Golden Sunsets</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-block reveal-fade" style="--qc:#e82020">
+      <div class="qmark">"</div>
+      <p>I didn't know what I was looking for — until I found you.</p>
+    </div>
+
+    <div class="milestone-strip reveal-up">
+      <div class="milestone"><span class="ms-icon">✦</span><span>First Date</span></div>
+      <div class="milestone"><span class="ms-icon">✦</span><span>First "I love you"</span></div>
+      <div class="milestone"><span class="ms-icon">✦</span><span>First Adventure</span></div>
+      <div class="milestone"><span class="ms-icon">✦</span><span>First Home-cooked Meal</span></div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       MIDDLE DIVIDER — Paint splash
+  ══════════════════════════════════ -->
+  <div class="paint-divider">
+    <div class="pd-red"></div>
+    <div class="pd-white"></div>
+    <div class="pd-blue"></div>
+    <div class="pd-text reveal-up">Our love painted<br/>every day bright.</div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       YEAR TWO
+  ══════════════════════════════════ -->
+  <section class="year-section year-two" id="year2">
+    <div class="year-bg-text">2024</div>
+    <div class="year-header reveal-up">
+      <span class="year-tag">Year Two</span>
+      <h2 class="year-title">Growing <em>Together</em></h2>
+      <p class="year-subtitle">Through challenges and triumphs, we learned each other's rhythms and built something unbreakable.</p>
+    </div>
+
+    <div class="timeline">
+      <div class="tl-item tl-left reveal-side-left">
+        <div class="tl-img">
+          <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=500&q=80" alt="travel" />
+        </div>
+        <div class="tl-content">
+          <h3>Trips & Adventures</h3>
+          <p>Every road trip became a love letter written in miles — discovering new places, discovering each other.</p>
+        </div>
+      </div>
+      <div class="tl-line"></div>
+      <div class="tl-item tl-right reveal-side-right">
+        <div class="tl-img">
+          <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=500&q=80" alt="cozy together" />
+        </div>
+        <div class="tl-content">
+          <h3>Quiet Moments</h3>
+          <p>The small, still moments — mornings in bed, rainy days, and just being present — became our favourite.</p>
+        </div>
+      </div>
+      <div class="tl-line"></div>
+      <div class="tl-item tl-left reveal-side-left">
+        <div class="tl-img">
+          <img src="https://images.unsplash.com/photo-1536640712-4d4c36ff0e4e?w=500&q=80" alt="celebrating" />
+        </div>
+        <div class="tl-content">
+          <h3>Celebrations</h3>
+          <p>We celebrated each other — birthdays, little wins, and ordinary Tuesdays that felt extraordinary.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="quote-block reveal-fade" style="--qc:#1a3acc">
+      <div class="qmark">"</div>
+      <p>With you, even the ordinary becomes the most beautiful story.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       LOVE COUNTER
+  ══════════════════════════════════ -->
+  <section class="counter-section">
+    <div class="noise-overlay"></div>
+    <div class="counter-aurora"></div>
+    <h2 class="counter-title reveal-up">Three Years in Numbers</h2>
+    <div class="counters reveal-up">
+      <div class="counter-item">
+        <span class="counter-num" data-target="1095">0</span>
+        <span class="counter-label">Days Together</span>
+      </div>
+      <div class="counter-item">
+        <span class="counter-num" data-target="365">0</span>
+        <span class="counter-label">Good Morning Texts</span>
+      </div>
+      <div class="counter-item">
+        <span class="counter-num" data-target="∞" data-infinite="true">∞</span>
+        <span class="counter-label">Reasons I Love You</span>
+      </div>
+      <div class="counter-item">
+        <span class="counter-num" data-target="3">0</span>
+        <span class="counter-label">Incredible Years</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       YEAR THREE
+  ══════════════════════════════════ -->
+  <section class="year-section year-three" id="year3">
+    <div class="year-bg-text">2025</div>
+    <div class="year-header reveal-up">
+      <span class="year-tag">Year Three</span>
+      <h2 class="year-title">Deeper, Stronger, <em>Ours</em></h2>
+      <p class="year-subtitle">Year three — where love matures into something profound, steady, and endlessly exciting all at once.</p>
+    </div>
+
+    <div class="mosaic reveal-up">
+      <div class="mosaic-item m1">
+        <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" alt="city lights" />
+      </div>
+      <div class="mosaic-item m2">
+        <img src="https://images.unsplash.com/photo-1533778477265-4a4fe478e3e1?w=500&q=80" alt="hand holding" />
+      </div>
+      <div class="mosaic-item m3">
+        <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=400&q=80" alt="flowers" />
+      </div>
+      <div class="mosaic-item m4">
+        <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=600&q=80" alt="beach sunset" />
+      </div>
+      <div class="mosaic-item m5">
+        <img src="https://images.unsplash.com/photo-1531747056595-07f6cbbe10ad?w=500&q=80" alt="couple portrait" />
+      </div>
+    </div>
+
+    <div class="reasons-section reveal-up">
+      <h3 class="reasons-title">Why I love you</h3>
+      <div class="reasons-list">
+        <div class="reason-item" style="--rc: #e82020">Your laugh that fills every room</div>
+        <div class="reason-item" style="--rc: #1a3acc">The way you care so deeply</div>
+        <div class="reason-item" style="--rc: #e82020">How you make me feel at home</div>
+        <div class="reason-item" style="--rc: #1a3acc">Your strength in hard moments</div>
+        <div class="reason-item" style="--rc: #e82020">Every little thing you do for me</div>
+        <div class="reason-item" style="--rc: #1a3acc">The way you look at me</div>
+        <div class="reason-item" style="--rc: #e82020">How safe I feel beside you</div>
+        <div class="reason-item" style="--rc: #1a3acc">Simply — you, all of you</div>
+      </div>
+    </div>
+
+    <div class="quote-block reveal-fade" style="--qc:#e82020">
+      <div class="qmark">"</div>
+      <p>Three years and I fall in love with you all over again, every single day.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       HANDPRINT TRIBUTE
+  ══════════════════════════════════ -->
+  <section class="handprint-tribute">
+    <div class="ht-noise"></div>
+    <div class="ht-left reveal-side-left">
+      <div class="ht-hand red-hand">
+        <svg viewBox="0 0 220 280" xmlns="http://www.w3.org/2000/svg">
+          <path d="M60 260 C30 240 10 200 10 160 L10 80 C10 60 22 48 38 48 C44 48 50 51 54 56 L54 30 C54 14 64 4 78 4 C92 4 102 14 102 30 L102 20 C102 6 112 -2 124 -2 C136 -2 146 6 146 20 L146 30 C146 16 156 6 168 6 C180 6 190 16 190 30 L190 120 C200 112 212 114 216 124 C222 138 210 160 190 180 L190 240 C190 252 180 262 168 262 Z" fill="rgba(220,40,40,0.9)"/>
+        </svg>
+      </div>
+      <p class="ht-caption">Your hand in mine — always.</p>
+    </div>
+    <div class="ht-center reveal-fade">
+      <div class="ht-message">
+        <span class="ht-quote">"When I'm with you,<br/>everything feels <strong>right</strong>."</span>
+        <span class="ht-sig">— Love, always</span>
+        <span class="ht-date">06 · 04 · 2026</span>
+      </div>
+    </div>
+    <div class="ht-right reveal-side-right">
+      <div class="ht-hand blue-hand">
+        <svg viewBox="0 0 220 280" xmlns="http://www.w3.org/2000/svg">
+          <path d="M160 260 C190 240 210 200 210 160 L210 80 C210 60 198 48 182 48 C176 48 170 51 166 56 L166 30 C166 14 156 4 142 4 C128 4 118 14 118 30 L118 20 C118 6 108 -2 96 -2 C84 -2 74 6 74 20 L74 30 C74 16 64 6 52 6 C40 6 30 16 30 30 L30 120 C20 112 8 114 4 124 C-2 138 10 160 30 180 L30 240 C30 252 40 262 52 262 Z" fill="rgba(30,60,200,0.9)"/>
+        </svg>
+      </div>
+      <p class="ht-caption">Together we paint the world.</p>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       LOVE LETTERS — 3-Button Modal System
+  ══════════════════════════════════ -->
+  <section class="letters-section">
+    <div class="noise-overlay"></div>
+    <div class="letters-aurora"></div>
+    <div class="letters-header reveal-up">
+      <p class="letters-eyebrow">Words from the heart</p>
+      <h2 class="letters-title">Love Letters</h2>
+      <p class="letters-sub">Three letters. Three chapters of my heart.</p>
+    </div>
+    <div class="letters-buttons reveal-up">
+      <button class="letter-open-btn" data-letter="1">
+        <div class="lob-glow"></div>
+        <div class="lob-envelope">✉</div>
+        <span class="lob-title">Letter One</span>
+        <span class="lob-hint">The Beginning</span>
+      </button>
+      <button class="letter-open-btn" data-letter="2">
+        <div class="lob-glow"></div>
+        <div class="lob-envelope">✉</div>
+        <span class="lob-title">Letter Two</span>
+        <span class="lob-hint">The Middle</span>
+      </button>
+      <button class="letter-open-btn" data-letter="3">
+        <div class="lob-glow"></div>
+        <div class="lob-envelope">✉</div>
+        <span class="lob-title">Letter Three</span>
+        <span class="lob-hint">Right Now</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ── LETTER MODAL ── -->
+  <div id="letter-modal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-box">
+      <button class="modal-close" id="modal-close" aria-label="Close">✕</button>
+      <div class="modal-letter-paper">
+        <div class="modal-stamp" id="modal-stamp"></div>
+        <div class="letter-header">
+          <span class="letter-to" id="modal-to"></span>
+        </div>
+        <div class="letter-body" id="modal-body"></div>
+        <div class="letter-footer">
+          <span class="letter-sig" id="modal-sig"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════
+       GALLERY — Infinite Bento Scroll
+  ══════════════════════════════════ -->
+  <section class="gallery-section">
+    <div class="gallery-header reveal-up">
+      <p class="gallery-eyebrow">Our Memories</p>
+      <h2 class="gallery-title">Moments Captured</h2>
+    </div>
+    <div class="gallery-track-wrapper">
+      <div class="gallery-track" id="gallery-track">
+        <!-- images injected by JS -->
+      </div>
+    </div>
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" aria-hidden="true">
+      <button class="lb-close" id="lb-close">✕</button>
+      <button class="lb-arrow lb-prev" id="lb-prev">‹</button>
+      <div class="lb-img-wrap"><img id="lb-img" src="" alt="" /></div>
+      <button class="lb-arrow lb-next" id="lb-next">›</button>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       FINAL HERO
+  ══════════════════════════════════ -->
+  <section class="final-section">
+    <div class="final-bg"></div>
+    <div class="final-noise"></div>
+    <div class="fs-splat fs-red"></div>
+    <div class="fs-splat fs-blue"></div>
+
+    <div class="final-content reveal-zoom">
+      <p class="final-year">Year 3 ✦ 2026</p>
+      <h2 class="final-title">I Love You</h2>
+      <p class="final-sub">Yesterday. Today. Always.</p>
+      <div class="final-hearts">
+        <span>♥</span><span>♥</span><span>♥</span>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
