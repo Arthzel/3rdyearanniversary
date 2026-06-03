@@ -11,10 +11,31 @@
 
   <!-- ── PRELOADER ── -->
   <div id="preloader">
-    <div class="pre-ring"></div>
-    <div class="pre-heart">♥</div>
-    <p class="pre-text">Loading our story…</p>
-    <div class="pre-progress"><div class="pre-bar"></div></div>
+    <div class="pre-petals">
+      <div class="petal p1"></div>
+      <div class="petal p2"></div>
+      <div class="petal p3"></div>
+      <div class="petal p4"></div>
+      <div class="petal p5"></div>
+      <div class="petal p6"></div>
+    </div>
+    <div class="pre-center">
+      <div class="pre-heart-wrap">
+        <div class="pre-heart-pulse">♥</div>
+        <div class="pre-heart-ring"></div>
+        <div class="pre-heart-ring r2"></div>
+      </div>
+      <p class="pre-text">Loading our story<span class="pre-dots"><span>.</span><span>.</span><span>.</span></span></p>
+      <div class="pre-progress"><div class="pre-bar"></div></div>
+      <p class="pre-sub">3 beautiful years ✦</p>
+    </div>
+    <div class="pre-floating-hearts">
+      <span class="fh fh1">♥</span>
+      <span class="fh fh2">♡</span>
+      <span class="fh fh3">♥</span>
+      <span class="fh fh4">♡</span>
+      <span class="fh fh5">♥</span>
+    </div>
   </div>
 
   <!-- ── SCROLL PROGRESS ── -->
@@ -24,11 +45,26 @@
   <div id="cursor"><div class="cursor-dot"></div></div>
   <div id="cursor-trail"></div>
 
-  <!-- ── FLOATING PARTICLES CANVAS ── -->
+  <!-- ── FLOATING PARTICLES ── -->
   <canvas id="particles-canvas"></canvas>
 
+  <!-- ── MUSIC START SIGN ── -->
+  <div id="music-start-sign" class="music-start-sign">
+    <div class="mss-glow"></div>
+    <div class="mss-inner">
+      <div class="mss-note n1">♪</div>
+      <div class="mss-note n2">♫</div>
+      <div class="mss-note n3">♪</div>
+      <div class="mss-icon">🎵</div>
+      <p class="mss-title">Play This Song Before Scrolling</p>
+      <p class="mss-hint">tap to fill the air with music</p>
+      <div class="mss-pulse-ring"></div>
+      <div class="mss-pulse-ring r2"></div>
+    </div>
+  </div>
+
   <!-- ── MUSIC BUTTON ── -->
-  <div id="music-btn" class="music-btn" title="Toggle music">
+  <div id="music-btn" class="music-btn hidden-initially" title="Toggle music">
     <div class="music-glow"></div>
     <svg class="music-icon play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
     <svg class="music-icon pause-icon hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
@@ -45,20 +81,17 @@
     <div class="hero-noise"></div>
     <div class="hero-aurora"></div>
 
-    <!-- Floating paint splats -->
     <div class="splat splat-red s1"></div>
     <div class="splat splat-blue s2"></div>
     <div class="splat splat-red s3"></div>
     <div class="splat splat-blue s4"></div>
 
-    <!-- Light rays -->
     <div class="light-rays">
       <div class="ray r1"></div>
       <div class="ray r2"></div>
       <div class="ray r3"></div>
     </div>
 
-    <!-- Handprint silhouettes -->
     <div class="hand hand-left">
       <svg viewBox="0 0 220 280" xmlns="http://www.w3.org/2000/svg">
         <path d="M60 260 C30 240 10 200 10 160 L10 80 C10 60 22 48 38 48 C44 48 50 51 54 56 L54 30 C54 14 64 4 78 4 C92 4 102 14 102 30 L102 20 C102 6 112 -2 124 -2 C136 -2 146 6 146 20 L146 30 C146 16 156 6 168 6 C180 6 190 16 190 30 L190 120 C200 112 212 114 216 124 C222 138 210 160 190 180 L190 240 C190 252 180 262 168 262 Z" fill="rgba(220,40,40,0.85)"/>
@@ -83,7 +116,6 @@
       </div>
     </div>
 
-    <!-- Live Anniversary Counter -->
     <div class="live-counter reveal-up" id="live-counter">
       <div class="lc-label">Together for</div>
       <div class="lc-nums">
@@ -105,7 +137,7 @@
   </section>
 
   <!-- ══════════════════════════════════
-       CHAPTER DIVIDER 0 — Intro
+       CHAPTER INTRO
   ══════════════════════════════════ -->
   <section class="chapter-intro">
     <div class="noise-overlay"></div>
@@ -113,7 +145,7 @@
       <div class="big-number reveal-side-left">3</div>
       <div class="chapter-text reveal-side-right">
         <h2>Three years.<br/>Thousands of moments.</h2>
-        <p>Every laugh. Every tear. Every quiet night and every adventure. This is our story — told in colour, memory, and love.</p>
+        <p>Every laugh. Every tear. Every quiet night and every lakwatsya. This is our story... told in colour, memory, and love.</p>
       </div>
     </div>
     <div class="paint-line red"></div>
@@ -126,59 +158,51 @@
   <section class="year-section year-one" id="year1">
     <div class="year-bg-text">2023</div>
     <div class="year-header reveal-up">
-      <span class="year-tag">Year One</span>
-      <h2 class="year-title">The Beginning of <em>Us</em></h2>
-      <p class="year-subtitle">Where it all started — nervous smiles, first butterflies, and the realisation that something extraordinary was happening.</p>
+      <span class="year-tag">Beginning</span>
+      <h2 class="year-title">The Start of <em>Us</em></h2>
+      <p class="year-subtitle">Where it all started... Kabadong Smiles, Layas Tuwing Gabi, and the Realisation that something extraordinary was happening.</p>
     </div>
 
     <div class="memory-grid">
       <div class="memory-card card-tall reveal-zoom" style="--delay:0s">
-        <img src="https://images.unsplash.com/photo-1529636798458-92182e662485?w=600&q=80" alt="couple walking" />
-        <div class="card-overlay">
-          <span class="card-label">First Walks</span>
-        </div>
+        <img src="assets/1.png" alt="couple walking" />
+        <div class="card-overlay"><span class="card-label">First Concert</span></div>
       </div>
       <div class="memory-card card-wide reveal-zoom" style="--delay:0.15s">
-        <img src="https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=700&q=80" alt="couple laughing" />
-        <div class="card-overlay">
-          <span class="card-label">Endless Laughter</span>
-        </div>
+        <img src="assets/2.png" alt="couple laughing" />
+        <div class="card-overlay"><span class="card-label">First Outing</span></div>
       </div>
       <div class="memory-card card-square reveal-zoom" style="--delay:0.3s">
-        <img src="https://images.unsplash.com/photo-1480562085804-9b149c25ef47?w=500&q=80" alt="coffee date" />
-        <div class="card-overlay">
-          <span class="card-label">Little Dates</span>
-        </div>
+        <img src="assets/3.png" alt="coffee date" />
+        <div class="card-overlay"><span class="card-label">PIKNIK</span></div>
       </div>
       <div class="memory-card card-square reveal-zoom" style="--delay:0.45s">
-        <img src="https://images.unsplash.com/photo-1543269664-56d93c1b41a6?w=500&q=80" alt="sunset together" />
-        <div class="card-overlay">
-          <span class="card-label">Golden Sunsets</span>
-        </div>
+        <img src="assets/4.png" alt="sunset together" />
+        <div class="card-overlay"><span class="card-label">DAM</span></div>
       </div>
     </div>
 
     <div class="quote-block reveal-fade" style="--qc:#e82020">
       <div class="qmark">"</div>
-      <p>I didn't know what I was looking for — until I found you.</p>
+      <p>I didn't know what I was looking for...     until I found you.</p>
     </div>
 
     <div class="milestone-strip reveal-up">
-      <div class="milestone"><span class="ms-icon">✦</span><span>First Date</span></div>
+      <div class="milestone"><span class="ms-icon">✦</span><span>First Hug</span></div>
       <div class="milestone"><span class="ms-icon">✦</span><span>First "I love you"</span></div>
-      <div class="milestone"><span class="ms-icon">✦</span><span>First Adventure</span></div>
-      <div class="milestone"><span class="ms-icon">✦</span><span>First Home-cooked Meal</span></div>
+      <div class="milestone"><span class="ms-icon">✦</span><span>First Kiss</span></div>
+      <div class="milestone"><span class="ms-icon">✦</span><span>First You Know</span></div>
     </div>
   </section>
 
   <!-- ══════════════════════════════════
-       MIDDLE DIVIDER — Paint splash
+       PAINT DIVIDER
   ══════════════════════════════════ -->
   <div class="paint-divider">
     <div class="pd-red"></div>
     <div class="pd-white"></div>
     <div class="pd-blue"></div>
-    <div class="pd-text reveal-up">Our love painted<br/>every day bright.</div>
+    <div class="pd-text reveal-up">That kiss wasn't a mistake<br/>That kiss made us.</div>
   </div>
 
   <!-- ══════════════════════════════════
@@ -187,41 +211,51 @@
   <section class="year-section year-two" id="year2">
     <div class="year-bg-text">2024</div>
     <div class="year-header reveal-up">
-      <span class="year-tag">Year Two</span>
+      <span class="year-tag">CLOSER</span>
       <h2 class="year-title">Growing <em>Together</em></h2>
-      <p class="year-subtitle">Through challenges and triumphs, we learned each other's rhythms and built something unbreakable.</p>
+      <p class="year-subtitle">Through challenges and laughter, we learned each other's rhythms and built something unbreakable.</p>
     </div>
 
     <div class="timeline">
+
       <div class="tl-item tl-left reveal-side-left">
-        <div class="tl-img">
-          <img src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?w=500&q=80" alt="travel" />
+        <div class="tl-img tl-img--video">
+          <video autoplay muted loop playsinline>
+            <source src="assets/reel3.mp4" type="video/mp4" />
+          </video>
         </div>
         <div class="tl-content">
-          <h3>Trips & Adventures</h3>
-          <p>Every road trip became a love letter written in miles — discovering new places, discovering each other.</p>
+          <h3>Karaoke Duet</h3>
+          <p>I remember this like it was yesterday, na para bang tayo lang ang nasa bahay.</p>
         </div>
       </div>
+
       <div class="tl-line"></div>
+
+      <!-- Entry 2: still photo -->
       <div class="tl-item tl-right reveal-side-right">
         <div class="tl-img">
-          <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=500&q=80" alt="cozy together" />
+          <img src="assets/6.png" alt="cozy together" />
         </div>
         <div class="tl-content">
-          <h3>Quiet Moments</h3>
-          <p>The small, still moments — mornings in bed, rainy days, and just being present — became our favourite.</p>
+          <h3>Bahay Moments</h3>
+          <p>Everytime you came, the house felt alive with your presence.</p>
         </div>
       </div>
+
       <div class="tl-line"></div>
+
+      <!-- Entry 3: still photo -->
       <div class="tl-item tl-left reveal-side-left">
         <div class="tl-img">
-          <img src="https://images.unsplash.com/photo-1536640712-4d4c36ff0e4e?w=500&q=80" alt="celebrating" />
+          <img src="assets/7.png" alt="celebrating" />
         </div>
         <div class="tl-content">
           <h3>Celebrations</h3>
-          <p>We celebrated each other — birthdays, little wins, and ordinary Tuesdays that felt extraordinary.</p>
+          <p>We celebrated each other's birthdays, little wins, and mkahit ordinary na araw nagiging special.</p>
         </div>
       </div>
+
     </div>
 
     <div class="quote-block reveal-fade" style="--qc:#1a3acc">
@@ -229,6 +263,70 @@
       <p>With you, even the ordinary becomes the most beautiful story.</p>
     </div>
   </section>
+
+  <!-- ══════════════════════════════════
+       VIDEO GALLERY (film2 + film3)
+  ══════════════════════════════════ -->
+  <section class="video-gallery-section">
+    <div class="vg-bg"></div>
+    <div class="vg-header reveal-up">
+      <p class="vg-eyebrow">us, in motion</p>
+      <h2 class="vg-title">Our Story <em>On Film</em></h2>
+    </div>
+    <div class="vg-grid">
+      <div class="vg-item vg-item--left reveal-up">
+        <div class="vg-frame">
+          <video autoplay muted loop playsinline>
+            <source src="assets/reel2.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="vg-glow vg-glow--red"></div>
+        <div class="vg-label">Boton Trippings</div>
+      </div>
+      <div class="vg-item vg-item--right reveal-up" style="--delay:0.15s">
+        <div class="vg-frame">
+          <video autoplay muted loop playsinline>
+            <source src="assets/reel1.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="vg-glow vg-glow--blue"></div>
+        <div class="vg-label">Iraya: The Ride</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════
+       VOICE MESSAGE
+  ══════════════════════════════════ -->
+  <div class="voice-msg-section">
+    <div class="vm-bg-glow"></div>
+    <div class="vm-wrapper reveal-zoom">
+      <div class="vm-deco-left">♥</div>
+      <div class="vm-deco-right">♥</div>
+      <p class="vm-eyebrow">something special</p>
+      <h3 class="vm-title">A Message<br/><em>For You</em></h3>
+      <p class="vm-sub">Close your eyes and press play ♥</p>
+      <button id="voice-btn" class="voice-btn" aria-label="Play voice message">
+        <div class="vb-ring r1"></div>
+        <div class="vb-ring r2"></div>
+        <div class="vb-ring r3"></div>
+        <div class="vb-inner">
+          <svg class="vb-icon play-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+          <svg class="vb-icon pause-icon hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+          <svg class="vb-icon stop-icon hidden" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h12v12H6z"/></svg>
+          <div class="vb-label" id="vb-label">play</div>
+        </div>
+      </button>
+      <div class="vb-waves" id="vb-waves">
+        <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <button id="voice-stop-btn" class="voice-stop-btn hidden" aria-label="Stop voice message">
+        <svg viewBox="0 0 24 24" fill="currentColor" width="12" height="12"><path d="M6 6h12v12H6z"/></svg>
+        <span>stop</span>
+      </button>
+      <p class="vm-caption" id="vm-caption">my voice, just for you</p>
+    </div>
+  </div>
 
   <!-- ══════════════════════════════════
        LOVE COUNTER
@@ -243,8 +341,8 @@
         <span class="counter-label">Days Together</span>
       </div>
       <div class="counter-item">
-        <span class="counter-num" data-target="365">0</span>
-        <span class="counter-label">Good Morning Texts</span>
+        <span class="counter-num" data-target="2190">0</span>
+        <span class="counter-label">Good Morning</span>
       </div>
       <div class="counter-item">
         <span class="counter-num" data-target="∞" data-infinite="true">∞</span>
@@ -263,46 +361,36 @@
   <section class="year-section year-three" id="year3">
     <div class="year-bg-text">2025</div>
     <div class="year-header reveal-up">
-      <span class="year-tag">Year Three</span>
+      <span class="year-tag">MATURITY</span>
       <h2 class="year-title">Deeper, Stronger, <em>Ours</em></h2>
-      <p class="year-subtitle">Year three — where love matures into something profound, steady, and endlessly exciting all at once.</p>
+      <p class="year-subtitle">Where love matures into something profound, steady, and endlessly exciting all at once.</p>
     </div>
 
     <div class="mosaic reveal-up">
-      <div class="mosaic-item m1">
-        <img src="https://images.unsplash.com/photo-1499856871958-5b9627545d1a?w=600&q=80" alt="city lights" />
-      </div>
-      <div class="mosaic-item m2">
-        <img src="https://images.unsplash.com/photo-1533778477265-4a4fe478e3e1?w=500&q=80" alt="hand holding" />
-      </div>
-      <div class="mosaic-item m3">
-        <img src="https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?w=400&q=80" alt="flowers" />
-      </div>
-      <div class="mosaic-item m4">
-        <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?w=600&q=80" alt="beach sunset" />
-      </div>
-      <div class="mosaic-item m5">
-        <img src="https://images.unsplash.com/photo-1531747056595-07f6cbbe10ad?w=500&q=80" alt="couple portrait" />
-      </div>
+      <div class="mosaic-item m1"><img src="assets/8.png" /></div>
+      <div class="mosaic-item m2"><img src="assets/9.png" /></div>
+      <div class="mosaic-item m3"><img src="assets/10.png" /></div>
+      <div class="mosaic-item m4"><img src="assets/11.png"/></div>
+      <div class="mosaic-item m5"><img src="assets/12.png" /></div>
     </div>
 
     <div class="reasons-section reveal-up">
       <h3 class="reasons-title">Why I love you</h3>
       <div class="reasons-list">
-        <div class="reason-item" style="--rc: #e82020">Your laugh that fills every room</div>
-        <div class="reason-item" style="--rc: #1a3acc">The way you care so deeply</div>
-        <div class="reason-item" style="--rc: #e82020">How you make me feel at home</div>
-        <div class="reason-item" style="--rc: #1a3acc">Your strength in hard moments</div>
-        <div class="reason-item" style="--rc: #e82020">Every little thing you do for me</div>
-        <div class="reason-item" style="--rc: #1a3acc">The way you look at me</div>
-        <div class="reason-item" style="--rc: #e82020">How safe I feel beside you</div>
-        <div class="reason-item" style="--rc: #1a3acc">Simply — you, all of you</div>
+        <div class="reason-item" style="--rc:#e82020">Your laugh that fills every room</div>
+        <div class="reason-item" style="--rc:#1a3acc">The way you care so deeply</div>
+        <div class="reason-item" style="--rc:#e82020">How you make me feel at home</div>
+        <div class="reason-item" style="--rc:#1a3acc">Your strength in hard moments</div>
+        <div class="reason-item" style="--rc:#e82020">Every little thing you do for me</div>
+        <div class="reason-item" style="--rc:#1a3acc">The way you look at me</div>
+        <div class="reason-item" style="--rc:#e82020">How safe I feel beside you</div>
+        <div class="reason-item" style="--rc:#1a3acc">Simply you, all of you</div>
       </div>
     </div>
 
     <div class="quote-block reveal-fade" style="--qc:#e82020">
       <div class="qmark">"</div>
-      <p>Three years and I fall in love with you all over again, every single day.</p>
+      <p>If I died today, I would still choose to be with you in every single lifetime.</p>
     </div>
   </section>
 
@@ -337,7 +425,7 @@
   </section>
 
   <!-- ══════════════════════════════════
-       LOVE LETTERS — 3-Button Modal System
+       LOVE LETTERS
   ══════════════════════════════════ -->
   <section class="letters-section">
     <div class="noise-overlay"></div>
@@ -351,19 +439,19 @@
       <button class="letter-open-btn" data-letter="1">
         <div class="lob-glow"></div>
         <div class="lob-envelope">✉</div>
-        <span class="lob-title">Letter One</span>
+        <span class="lob-title">First Anniversary</span>
         <span class="lob-hint">The Beginning</span>
       </button>
       <button class="letter-open-btn" data-letter="2">
         <div class="lob-glow"></div>
         <div class="lob-envelope">✉</div>
-        <span class="lob-title">Letter Two</span>
+        <span class="lob-title">Second Anniversary</span>
         <span class="lob-hint">The Middle</span>
       </button>
       <button class="letter-open-btn" data-letter="3">
         <div class="lob-glow"></div>
         <div class="lob-envelope">✉</div>
-        <span class="lob-title">Letter Three</span>
+        <span class="lob-title">Third Anniversary</span>
         <span class="lob-hint">Right Now</span>
       </button>
     </div>
@@ -387,40 +475,47 @@
   </div>
 
   <!-- ══════════════════════════════════
-       GALLERY — Infinite Bento Scroll
+       GALLERY — Pinterest Masonry Scroll
   ══════════════════════════════════ -->
   <section class="gallery-section">
     <div class="gallery-header reveal-up">
       <p class="gallery-eyebrow">Our Memories</p>
       <h2 class="gallery-title">Moments Captured</h2>
+      <p class="gallery-sub">60 memories — every one of them ours</p>
     </div>
-    <div class="gallery-track-wrapper">
-      <div class="gallery-track" id="gallery-track">
-        <!-- images injected by JS -->
+
+    <div class="gallery-scroll-outer">
+      <div class="gallery-scroll-track" id="gallery-scroll-track">
+        <!-- JS builds masonry columns here -->
       </div>
+      <p class="gallery-hint">Hover to pause &nbsp;·&nbsp; Click to open</p>
     </div>
+
     <!-- Lightbox -->
     <div id="lightbox" class="lightbox" aria-hidden="true">
       <button class="lb-close" id="lb-close">✕</button>
       <button class="lb-arrow lb-prev" id="lb-prev">‹</button>
-      <div class="lb-img-wrap"><img id="lb-img" src="" alt="" /></div>
+      <div class="lb-media-wrap" id="lb-media-wrap">
+        <img id="lb-img" src="" alt="" />
+        <video id="lb-video" src="" controls playsinline></video>
+      </div>
+      <div class="lb-caption" id="lb-caption"></div>
       <button class="lb-arrow lb-next" id="lb-next">›</button>
     </div>
   </section>
 
   <!-- ══════════════════════════════════
-       FINAL HERO
+       FINAL
   ══════════════════════════════════ -->
   <section class="final-section">
     <div class="final-bg"></div>
     <div class="final-noise"></div>
     <div class="fs-splat fs-red"></div>
     <div class="fs-splat fs-blue"></div>
-
     <div class="final-content reveal-zoom">
-      <p class="final-year">Year 3 ✦ 2026</p>
+      <p class="final-year">To My ✦ Baby</p>
       <h2 class="final-title">I Love You</h2>
-      <p class="final-sub">Yesterday. Today. Always.</p>
+      <p class="final-sub">Cristine Jersey</p>
       <div class="final-hearts">
         <span>♥</span><span>♥</span><span>♥</span>
       </div>
