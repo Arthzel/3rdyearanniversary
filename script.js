@@ -289,72 +289,35 @@ function animateParticles() {
 }
 animateParticles();
 
-// ── Music Button (Spotify) ────────────────
-const SPOTIFY_ID   = '1lORkxEMmsCZqhoxcmk3A3'; // paste your track ID here
-const SPOTIFY_TYPE = 'track'; // 'track' or 'playlist'
-
-// Hidden Spotify iframe
-const spContainer = document.createElement('div');
-spContainer.style.cssText = 'position:fixed;bottom:-9999px;left:-9999px;width:1px;height:1px;overflow:hidden;pointer-events:none;';
-spContainer.innerHTML = `
-  <iframe
-    id="spotify-iframe"
-    src="https://open.spotify.com/embed/${SPOTIFY_TYPE}/${SPOTIFY_ID}?utm_source=generator&theme=0"
-    width="300"
-    height="80"
-    frameborder="0"
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-    loading="lazy">
-  </iframe>
-`;
-document.body.appendChild(spContainer);
+// ── SIMPLE MUSIC SYSTEM (FIXED FOR MOBILE) ──
+const music = new Audio('assets/music.mp3');
+music.loop = true;
+music.preload = 'auto';
 
 const musicBtn  = document.getElementById('music-btn');
 const playIcon  = musicBtn.querySelector('.play-icon');
 const pauseIcon = musicBtn.querySelector('.pause-icon');
-let   isPlaying = false;
 
-// Spotify embed controller
-window.onSpotifyIframeApiReady = (IFrameAPI) => {
-  const element = document.getElementById('spotify-iframe');
-  const options = { uri: `spotify:${SPOTIFY_TYPE}:${SPOTIFY_ID}` };
+let isPlaying = false;
 
-  IFrameAPI.createController(element, options, (EmbedController) => {
-    window.spotifyController = EmbedController;
-
-    // Keep button in sync if track ends or pauses externally
-    EmbedController.addListener('playback_update', e => {
-      if (e.data.isPaused && isPlaying) {
-        isPlaying = false;
-        musicBtn.classList.remove('playing');
-        playIcon.classList.remove('hidden');
-        pauseIcon.classList.add('hidden');
-      }
-    });
-  });
-};
-
-// Load Spotify IFrame API
-const spScript  = document.createElement('script');
-spScript.src    = 'https://open.spotify.com/embed/iframe-api/v1';
-spScript.async  = true;
-document.head.appendChild(spScript);
-
-musicBtn.addEventListener('click', () => {
-  if (!window.spotifyController) return;
-
-  if (!isPlaying) {
-    window.spotifyController.resume();
-    isPlaying = true;
-    musicBtn.classList.add('playing');
-    playIcon.classList.add('hidden');
-    pauseIcon.classList.remove('hidden');
-  } else {
-    window.spotifyController.pause();
-    isPlaying = false;
-    musicBtn.classList.remove('playing');
-    playIcon.classList.remove('hidden');
-    pauseIcon.classList.add('hidden');
+// IMPORTANT: mobile requires user gesture → click is enough (you're safe here)
+musicBtn.addEventListener('click', async () => {
+  try {
+    if (!isPlaying) {
+      await music.play();
+      isPlaying = true;
+      musicBtn.classList.add('playing');
+      playIcon.classList.add('hidden');
+      pauseIcon.classList.remove('hidden');
+    } else {
+      music.pause();
+      isPlaying = false;
+      musicBtn.classList.remove('playing');
+      playIcon.classList.remove('hidden');
+      pauseIcon.classList.add('hidden');
+    }
+  } catch (err) {
+    console.log("Audio blocked:", err);
   }
 });
 
